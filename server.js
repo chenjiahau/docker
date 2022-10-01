@@ -1,11 +1,6 @@
-const http = require('http');
+import http from 'http';
+import app from './app.js';
 
-http.createServer((request, response) => {
-  response.writeHead(200, {
-    'Content-Type': 'text/plain'
-  });
+const server = http.createServer(app);
 
-  response.write('Hello, World!\n');
-  response.end();
-
-}).listen(3000);
+server.listen(process.env.PORT || 3000);
