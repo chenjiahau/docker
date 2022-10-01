@@ -4,4 +4,5 @@ COPY package.json /app
 RUN npm install
 COPY . /app
 EXPOSE 3000
-CMD ["node", "server.js"]
+VOLUME [ "/app/logs", "/app/node_modules" ]
+CMD ["npm", "start"]
